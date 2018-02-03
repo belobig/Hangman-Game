@@ -1,0 +1,130 @@
+@font-face {
+  font-family: Hylia;
+  src: url(fonts/hylia_serif_beta-regular.otf); }
+
+@font-face {
+  font-family: HylianSymbols;
+  src: url(fonts/hylian-symbols.ttf); }
+
+body {
+  font-family: Hylia, serif;
+  color: #55B2D3;
+  background: url(../images/sheikah_slate_wallpaper.jpg) no-repeat center fixed;
+  background-size: cover; }
+
+.semiTransparent {
+  background-color: #001144;
+  opacity: 0.5;
+  border: 4px solid black;
+  border-radius: 5px; }
+
+.divider {
+  border-color: #55B2D3; }
+
+.vl {
+  border-left: 1px solid #55B2D3;
+  height: 80%; }
+
+.symbol {
+  font-family: HylianSymbols, serif;
+  color: #55B2D3; }
+
+
+.letsNumbs {
+  font-size: 20px; }
+
+/* Items below this line were initially created in an scss file, then compiled into this new css file */
+/* Variabes */
+/* Mixin's */
+#alphabet {
+  margin: 15px auto;
+  padding: 0;
+  max-width: 900px; }
+  #alphabet:after {
+    content: "";
+    display: table;
+    clear: both; }
+
+#alphabet li {
+  float: left;
+  margin: 0 5px 5px 0;
+  list-style: none;
+  width: 35px;
+  height: 30px;
+  background: #fff;
+  color: #55B2D3;
+  cursor: pointer;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  -khtml-border-radius: 5px;
+  border: solid 1px #fff; }
+  #alphabet li:hover {
+    background: #55B2D3;
+    border: solid 1px #fff;
+    color: #fff; }
+
+#my-word {
+  margin: 0;
+  display: block;
+  padding: 0;
+  display: block; }
+
+#my-word li {
+  position: relative;
+  list-style: none;
+  margin: 0;
+  display: inline-block;
+  padding: 0 10px;
+  font-size: 1.6em; }
+
+.active {
+  opacity: 0.4;
+  filter: alpha(opacity=40);
+  -moz-transition: all 1s ease-in;
+  -moz-transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  cursor: default; }
+  .active:hover {
+    -moz-transition: all 1s ease-in;
+    -moz-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    opacity: 0.4;
+    filter: alpha(opacity=40);
+    -moz-transition: all 1s ease-in;
+    -moz-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out; }
+
+#mylives {
+  font-size: 1.6em;
+  text-align: center;
+  display: block; }
+
+button {
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  -khtml-border-radius: 5px;
+  background: #55B2D3;
+  color: #fff;
+  border: solid 1px #fff;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 1.2em;
+  outline: none; }
+  button:hover {
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background: #fff;
+    border: solid 1px #fff;
+    color: #55B2D3; }
+
+@media (max-width: 767px) {
+  #alphabet {
+    padding: 0 0 0 15px; } }
+
+@media (max-width: 480px) {
+  #alphabet {
+    padding: 0 0 0 25px; } }

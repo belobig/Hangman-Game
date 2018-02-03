@@ -7,7 +7,7 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
 	 crossorigin="anonymous">
-	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="assets/css/specialstyle.css">
 	<link rel="icon" href="assets/images/sheikah_slate_favicon.gif" type="image/gif">
 	<title>Hangman - LOZ</title>
 </head>
@@ -17,7 +17,10 @@
 
 		<div class="row">
 			<div class="col-md-12 text-center semiTransparent">
-				<h1><span class="symbol"> b </span> The Legend of Zelda - Hangman <span class="symbol"> b </span></h1>
+				<h1>
+					<span class="symbol"> b </span> The Legend of Zelda - Hangman
+					<span class="symbol"> b </span>
+				</h1>
 			</div>
 		</div>
 
@@ -29,14 +32,40 @@
 				<div class="row">
 					<div class="col-md-12">
 						<h3>Current Word</h3>
-						<p>_ _ _ _ _ _ _ _ _ _</p>
+						<p class="letsNumbs" id="currentWord"></p>
 						<hr class="divider">
 					</div>
 					<div class="col-xs-6">
-						<h3>Number of Guesses Remaining</h3>
+						<h3>Lives</h3>
+						<div class="letsNumbs" id="myLives">
+							<!-- Lives in here -->
+						</div>
+						<canvas id="stickman">This Text will show if the Browser does NOT support HTML5 Canvas tag
+							<!-- hangman drawing -->
+						</canvas>
+
 					</div>
 					<div class="col-xs-6 vl">
-						<h3>Letters Already Guessed</h3>
+						<h3>Letters</h3>
+						<div class="letsNumbs" id="buttons">
+							<!-- Letters buttons in here -->
+						</div>
+					</div>
+				</div>
+				<hr class="divider">
+				<div class="row">
+					<div class="col-xs-4">
+						<p>Wins:
+							<span id="win"></span>
+						</p>
+					</div>
+					<div class="col-xs-4">
+						<button id="reset">Play Again</button>
+					</div>
+					<div class="col-xs-4">
+						<p>Losses:
+							<span id="loss"></span>
+						</p>
 					</div>
 				</div>
 			</div>
@@ -44,6 +73,7 @@
 
 	</div>
 
+	<script src="http://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 
 	<script src="assets/javascript/game.js"></script>
 </body>

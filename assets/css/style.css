@@ -35,3 +35,17 @@ body {
 	font-family: HylianSymbols;
 	color: #55B2D3;
 }
+
+.mainArea {
+	position: relative;
+	top: 20px;
+}
+
+.letsNumbs {
+	font-size: 20px;
+}
+
+
+
+/* From Cathy Dutton's Hangman game css */
+
