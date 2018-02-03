@@ -9,7 +9,7 @@ window.onload = function () {
 	var guesses = [];		// Stored guesses
 	var lives;					// Lives
 	var counter;				// Count correct guesses
-	var space;					// Number of spaces in word '-'
+	var space = 0;					// Number of spaces in word '-'
 	var wins = 0;				// Number of wins
 	var losses = 0;			// Number of losses
 	var winSound;				// Winning Sound variable
@@ -47,7 +47,7 @@ window.onload = function () {
 			guess.setAttribute('class', 'guess');
 			if (word[i] === "-") {
 				guess.innerHTML = "-";
-				space = 1;
+				space += 1;
 			} else {
 				guess.innerHTML = "_";
 			}
@@ -199,7 +199,7 @@ window.onload = function () {
 
 	//Play
 	function play() {
-		wordList = ["ZELDA", "LINK", "EPONA", "GANON", "GANONDORF", "REVALI", "MIPHA", "DARUK", "URBOSA", "PRINCE SIDON", "RIJU", "CHUCHU", "KEESE", "WIZZROBE", "BOKOBLIN", "LIZALFOS", "MOBLIN", "LYNEL", "GUARDIAN", "TALUS", "HINOX", "MOLDUGA", "TRIFORCE", "BOMB", "BOOMERANG", "MASTER SWORD", "GREAT DEKUTREE", "OCARINA", "HYLIAN", "GERUDO", "SHEIKAH", "KOKIRI", "GORON", "ZORA", "DEKU", "KOROK", "DODONGO", "IMPA", "GOHMA", "AGAHNIM", "DAMPE", "MIDNA", "MALO", "TALO", "ZANT", "ILIA", "SKULL KID", "WOLF LINK", "GIRAHIM", "NAVI", "POE", "MAJORA", "LANAYRU", "FAROSH", "DINRAAL", "NAYDRA", "HESTU", "KING RHOAM", "SHEIK", "RUTO", "OOCCOO", "FARORE", "DIN", "VOLVAGIA", "LORD JABUJABU", "TINGLE", "SAGE", "STALFOS", "LEVIATHAN", "COTERA", "KAYASA", "MIJA", "TERA", "GREAT FAIRY"];
+		wordList = ["ZELDA", "LINK", "EPONA", "GANON", "GANONDORF", "REVALI", "MIPHA", "DARUK", "URBOSA", "PRINCE SIDON", "RIJU", "CHUCHU", "KEESE", "WIZZROBE", "BOKOBLIN", "LIZALFOS", "MOBLIN", "LYNEL", "GUARDIAN", "TALUS", "HINOX", "MOLDUGA", "TRIFORCE", "BOMB", "BOOMERANG", "MASTER SWORD", "GREAT DEKU TREE", "OCARINA", "HYLIAN", "GERUDO", "SHEIKAH", "KOKIRI", "GORON", "ZORA", "DEKU", "KOROK", "DODONGO", "IMPA", "GOHMA", "AGAHNIM", "DAMPE", "MIDNA", "MALO", "TALO", "ZANT", "ILIA", "SKULL KID", "WOLF LINK", "GIRAHIM", "NAVI", "POE", "MAJORA", "LANAYRU", "FAROSH", "DINRAAL", "NAYDRA", "HESTU", "KING RHOAM", "SHEIK", "RUTO", "OOCCOO", "FARORE", "DIN", "VOLVAGIA", "LORD JABU JABU", "TINGLE", "SAGE", "STALFOS", "LEVIATHAN", "COTERA", "KAYASA", "MIJA", "TERA", "GREAT FAIRY", "LOST WOODS", "HAPPY MASK SALESMAN", "KOTAKE", "KOUME", "FARON", "AKKALA", "DUELING PEAKS", "HATENO", "HEBRA", "TABANTHA", "LON LON RANCH"];
 
 		winSound = new sound("assets/sounds/lozfanfare.mp3");
 		loseSound = new sound("assets/sounds/lozlinkdie.wav");
