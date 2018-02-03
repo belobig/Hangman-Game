@@ -58,6 +58,13 @@ window.onload = function () {
 		}
 	}
 
+
+	// endGame function
+	function endGame() {
+		document.getElementById("buttons").style.display = "none";
+		document.getElementById("vl").style.height = "300px";
+	}
+
 	// Show lives
 	function comments() {
 		showLives.innerHTML = lives;
@@ -66,6 +73,7 @@ window.onload = function () {
 			losses++;
 			document.getElementById('loss').innerHTML = losses;
 			loseSound.play();
+			endGame();
 		}
 		for (var i = 0; i < guesses.length; i++) {
 			if (counter + space === guesses.length) {
@@ -76,6 +84,7 @@ window.onload = function () {
 			wins++;
 			document.getElementById('win').innerHTML = wins;
 			winSound.play();
+			endGame();
 		}
 	}
 
@@ -173,32 +182,36 @@ window.onload = function () {
 
 	//Sound 
 	function sound(src) {
-    this.sound = document.createElement("audio");
-    this.sound.src = src;
-    this.sound.setAttribute("preload", "auto");
-    this.sound.setAttribute("controls", "none");
-    this.sound.style.display = "none";
-    document.body.appendChild(this.sound);
-    this.play = function(){
-        this.sound.play();
-    }
-    this.stop = function(){
-        this.sound.pause();
-    }    
-}
+		this.sound = document.createElement("audio");
+		this.sound.src = src;
+		this.sound.setAttribute("preload", "auto");
+		this.sound.setAttribute("controls", "none");
+		this.sound.style.display = "none";
+		document.body.appendChild(this.sound);
+		this.play = function () {
+			this.sound.play();
+		}
+		this.stop = function () {
+			this.sound.pause();
+		}
+	}
 
 
 	//Play
 	function play() {
-		wordList = ["ZELDA", "LINK", "EPONA", "GANON", "GANONDORF", "REVALI", "MIPHA", "DARUK", "URBOSA", "PRINCE SIDON", "RIJU", "CHUCHU", "KEESE", "WIZZROBE", "BOKOBLIN", "LIZALFOS", "MOBLIN", "LYNEL", "GUARDIAN", "TALUS", "HINOX", "MOLDUGA", "TRIFORCE", "BOMB", "BOOMERANG", "MASTER SWORD", "GREAT DEKU TREE", "OCARINA", "HYLIAN", "GERUDO", "SHEIKAH", "KOKIRI", "GORON", "ZORA", "DEKU", "KOROK", "DODONGO", "IMPA", "GOHMA", "AGAHNIM", "DAMPE", "MIDNA", "MALO", "TALO", "ZANT", "ILIA", "SKULL KID", "WOLF LINK", "GIRAHIM", "NAVI", "POE"];
+		wordList = ["ZELDA", "LINK", "EPONA", "GANON", "GANONDORF", "REVALI", "MIPHA", "DARUK", "URBOSA", "PRINCE SIDON", "RIJU", "CHUCHU", "KEESE", "WIZZROBE", "BOKOBLIN", "LIZALFOS", "MOBLIN", "LYNEL", "GUARDIAN", "TALUS", "HINOX", "MOLDUGA", "TRIFORCE", "BOMB", "BOOMERANG", "MASTER SWORD", "GREAT DEKUTREE", "OCARINA", "HYLIAN", "GERUDO", "SHEIKAH", "KOKIRI", "GORON", "ZORA", "DEKU", "KOROK", "DODONGO", "IMPA", "GOHMA", "AGAHNIM", "DAMPE", "MIDNA", "MALO", "TALO", "ZANT", "ILIA", "SKULL KID", "WOLF LINK", "GIRAHIM", "NAVI", "POE", "MAJORA", "LANAYRU", "FAROSH", "DINRAAL", "NAYDRA", "HESTU", "KING RHOAM", "SHEIK", "RUTO", "OOCCOO", "FARORE", "DIN", "VOLVAGIA", "LORD JABUJABU", "TINGLE", "SAGE", "STALFOS", "LEVIATHAN", "COTERA", "KAYASA", "MIJA", "TERA", "GREAT FAIRY"];
 
 		winSound = new sound("assets/sounds/lozfanfare.mp3");
 		loseSound = new sound("assets/sounds/lozlinkdie.wav");
+
+		document.getElementById("buttons").style.display = "block";
+		document.getElementById("vl").style.height = "80%";
 
 		word = wordList[Math.floor(Math.random() * wordList.length)];
 		word = word.replace(/\s/g, "-");
 		console.log(word);
 		buttons();
+		
 
 		guesses = [];
 		lives = 10;
@@ -207,6 +220,7 @@ window.onload = function () {
 		result();
 		comments();
 		canvas();
+
 	}
 
 	play();
