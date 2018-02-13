@@ -13,7 +13,7 @@ window.onload = function () {
 	var wins = 0;				// Number of wins
 	var losses = 0;			// Number of losses
 	var winSound;				// Winning Sound variable
-	var loseSound				// Losing sound variable
+	var loseSound;				// Losing sound variable
 
 	// Get elements
 	var showLives = document.getElementById("myLives");
